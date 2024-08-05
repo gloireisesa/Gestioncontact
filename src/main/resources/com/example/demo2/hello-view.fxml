@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.TableColumn.*?>
+
+<AnchorPane fx:id="root" prefHeight="400" prefWidth="800"
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="contact.Controller">
+    <children>
+        <HBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox spacing="10" prefWidth="300" style="-fx-background-color: lightskyblue; -fx-padding: 20;">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <children>
+                        <Label text="Saisie des contacts :" style="-fx-font-weight: bold; -fx-font-size: 14;"/>
+                        <HBox spacing="10">
+                            <children>
+                                <Label text="ID :" />
+                                <TextField fx:id="idField" prefWidth="150.0" />
+                            </children>
+                        </HBox>
+                        <HBox spacing="10">
+                            <children>
+                                <Label text="Nom :" />
+                                <TextField fx:id="nomField" prefWidth="150.0" />
+                            </children>
+                        </HBox>
+                        <HBox spacing="10">
+                            <children>
+                                <Label text="Téléphone :" />
+                                <TextField fx:id="telephoneField" prefWidth="150.0" />
+                            </children>
+                        </HBox>
+                        <HBox spacing="10">
+                            <children>
+                                <Label text="Email :" />
+                                <TextField fx:id="emailField" prefWidth="150.0" />
+                            </children>
+                        </HBox>
+                        <HBox spacing="10">
+                            <children>
+                                <Label text="Anniversaire :" />
+                                <DatePicker fx:id="dateAnniversairePicker" prefWidth="150.0" />
+                            </children>
+                        </HBox>
+                        <HBox spacing="10">
+                            <children>
+                                <Label text="Type de contact :" />
+                                <RadioButton fx:id="personnelRadioButton" mnemonicParsing="false" text="Personnel"
+                                             toggleGroup="$typeContactGroup" />
+                                <RadioButton fx:id="professionnelRadioButton" mnemonicParsing="false"
+                                             text="Professionnel" toggleGroup="$typeContactGroup" />
+                            </children>
+                        </HBox>
+                        <HBox spacing="10">
+                            <children>
+                                <Label text="Adresse :" />
+                                <TextField fx:id="adresseField" prefWidth="150.0" />
+                            </children>
+                        </HBox>
+                        <HBox spacing="10">
+                            <children>
+                                <Label text="Entreprise :" />
+                                <TextField fx:id="entrepriseField" prefWidth="150.0" />
+                            </children>
+                        </HBox>
+                        <HBox spacing="10">
+                            <children>
+                                <Button fx:id="ajouterButton" mnemonicParsing="false" text="Ajouter" />
+                                <Button fx:id="supprimerButton" mnemonicParsing="false" text="Supprimer" />
+                            </children>
+                        </HBox>
+                        <HBox spacing="10">
+                            <children>
+                                <Button fx:id="modifierButton" mnemonicParsing="false" text="Modifier" />
+                                <Button fx:id="rechercherButton" mnemonicParsing="false" text="Rechercher" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox spacing="10" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Gestion des contacts" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-alignment: center;"/>
+                        <TableView fx:id="contactTableView" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="idColumn" prefWidth="50.0" text="ID" />
+                                <TableColumn fx:id="nomColumn" prefWidth="100.0" text="Nom" />
+                                <TableColumn fx:id="telephoneColumn" prefWidth="100.0" text="Téléphone" />
+                                <TableColumn fx:id="emailColumn" prefWidth="150.0" text="Email" />
+                                <TableColumn fx:id="anniversaireColumn" prefWidth="100.0" text="Anniversaire" />
+                                <TableColumn fx:id="typeColumn" prefWidth="100.0" text="Type" />
+                                <TableColumn fx:id="adresseColumn" prefWidth="100.0" text="Adresse" />
+                                <TableColumn fx:id="entrepriseColumn" prefWidth="100.0" text="Entreprise" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
